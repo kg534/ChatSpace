@@ -1,0 +1,16 @@
+.side--bar 
+  .side--bar__user
+    .top--items
+      .top--items__name
+        ユーザー名
+      .top--items__icon
+        = link_to "#" do
+          = icon('fas', 'cog', class: 'cog')
+        = link_to "#" do
+          = icon('fas', 'edit', class: 'edit')
+  
+  .side--bar__group--list
+    .side--bar__group--list__name
+      グループ
+    .side--bar__group--list__message
+      message
