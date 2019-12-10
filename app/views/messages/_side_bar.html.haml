@@ -2,9 +2,9 @@
   .side--bar__user
     .top--items
       .top--items__name
-        ユーザー名
+        = current_user.name
       .top--items__icon
-        = link_to "#" do
+        = link_to edit_user_path(current_user.id) do
           = icon('fas', 'cog', class: 'cog')
         = link_to "#" do
           = icon('fas', 'edit', class: 'edit')
