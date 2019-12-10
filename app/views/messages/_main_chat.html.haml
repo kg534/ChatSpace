@@ -26,9 +26,8 @@
 
   .chat--main__message--form
     .chat--main__message--form__bottom--items
-      %input.input__form--text{:placeholder => "type a message", :type => "text"}/
-      %label{class: "append__icon"}
+      %input.input__form--text{placeholder: 'type a message', type: 'text'}/
+      %label{class: 'append__icon'}
         = icon('far', 'image')
-        %input.input__form--file{:type => "file"}/
-    %input.send__btn{:type => "submit", :value => "Send"}/
-   
+        %input.input__form--file{type: 'file'}/
+    %input.send__btn{type: 'submit', value: 'Send'}/
