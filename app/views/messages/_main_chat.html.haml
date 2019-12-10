@@ -1,0 +1,34 @@
+.chat--main
+  .chat--main__group--info
+    .chat--main__group--info__name
+      グループ
+    .chat--main__group--info__member
+      Member: john tanaka
+    = link_to "#", class: "chat--main__group--info__edit--btn" do
+      Edit 
+ 
+  .chat--main__message--list
+    .chat--main__message--list__top
+      .user--name
+        tanaka
+      .time--stamp
+        2019/12/09(Sun) 21:48:00
+    .chat--main__message--list__message
+      hello
+
+    .chat--main__message--list__top
+      .user--name
+        john
+      .time--stamp
+        2019/12/10(Mon) 21:50:00
+    .chat--main__message--list__message
+      hi
+
+  .chat--main__message--form
+    .chat--main__message--form__bottom--items
+      %input.input__form--text{:placeholder => "type a message", :type => "text"}/
+      %label{class: "append__icon"}
+        = icon('far', 'image')
+        %input.input__form--file{:type => "file"}/
+    %input.send__btn{:type => "submit", :value => "Send"}/
+   
