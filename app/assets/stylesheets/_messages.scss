@@ -47,11 +47,21 @@ $mainWhiteColor: #ffffff;
       padding-top: 20px;
       font-size: 15px;
     }
+      a{
+        color: $mainWhiteColor;
+        font-weight: normal;
+        text-decoration: none;
+      }
     &__message{
       padding-top: 5px;
       padding-bottom: 40px;
       font-size: 11px;
     }
+      a{
+        color: $mainWhiteColor;
+        font-weight: normal;
+        text-decoration: none;
+      }
   }
 }
 
