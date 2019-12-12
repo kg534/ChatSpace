@@ -10,11 +10,10 @@
           = icon('fas', 'edit', class: 'edit')
 
   .side--bar__group--list
-    -# - if @groups.present?
     - current_user.groups.each do |group|
       .side--bar__group--list__name
         = link_to group_messages_path(group) do
           = group.name
       .side--bar__group--list__message
         = link_to group_messages_path(group) do
-          = group.id
+          = group.show_last_message

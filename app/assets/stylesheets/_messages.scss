@@ -43,6 +43,7 @@ $mainWhiteColor: #ffffff;
     background-color: #2f3e51;
     height: calc(100vh - 100px);
     padding: 0 20px;
+    font-weight: normal;
     &__name{
       padding-top: 20px;
       font-size: 15px;
@@ -59,7 +60,6 @@ $mainWhiteColor: #ffffff;
     }
       a{
         color: $mainWhiteColor;
-        font-weight: normal;
         text-decoration: none;
       }
   }
@@ -76,6 +76,7 @@ $mainWhiteColor: #ffffff;
     display: flex;
     justify-content: space-between;
     position: relative;
+    overflow: scroll;
     &__name{
       color: #333333;
       font-size: 20px;
@@ -103,28 +104,30 @@ $mainWhiteColor: #ffffff;
   &__message--list{
     background-color: #fafafa;
     height: calc(100vh - 100px - 90px);
-    padding-left: 40px;
-    padding-top: 35px;
-    &__top{
-      padding-bottom: 12px;
-      display: flex;
-      justify-content: start;
-    }
-      .user--name{
-        color: #333333;
-        font-weight: bold;
-        font-size: 16px;
+    overflow: scroll;
+    padding: 46px 40px;
+    &__content{
+      padding-bottom: 40px;
+      &__top{
+        padding-bottom: 12px;
+        display: flex;
+        justify-content: start;
       }
-      .time--stamp{
-        color: #999999;
-        font-weight: normal;
-        font-size: 12px;
-        padding-left: 10px;
+        .user--name{
+          color: #333333;
+          font-weight: bold;
+          font-size: 16px;
+        }
+        .time--stamp{
+          color: #999999;
+          font-weight: normal;
+          font-size: 12px;
+          padding-left: 10px;
+        }
+      &__lower{
+        color: #434a54;
+        font-size: 14px;
       }
-    &__message{
-      color: #434a54;
-      font-size: 14px;
-      padding-bottom: 46px;
     }
   }
   &__message--form{
@@ -135,18 +138,17 @@ $mainWhiteColor: #ffffff;
     justify-content: space-between;
     align-items: center;
     &__bottom--items{
+      height: 50px;
       position: relative;
       width: 100%;
       height: 50px;
     }
       .input__form--text{
+        padding-left: 10px;
         height: 50px;
         width: 100%;
         border: none;
       }
-        ::placeholder{
-          padding-left: 10px;
-        } 
       .append__icon{
         line-height: 50px;
         font-size: 25px;
@@ -157,14 +159,16 @@ $mainWhiteColor: #ffffff;
         .input__form--file{
           display: none;
         }
-    .send__btn{
-      height: 50px;
-      width: 100px;
-      color: $mainWhiteColor;
-      padding: 0 30px;
-      margin-left: 15px;
-      background-color: #38aef0;
-      cursor: pointer; 
+    &__bottom--btn{
+      .send__btn{
+        height: 50px;
+        width: 100px;
+        color: $mainWhiteColor;
+        padding: 0 30px;
+        margin-left: 15px;
+        background-color: #38aef0;
+        cursor: pointer; 
+      }
     }
   }
 }

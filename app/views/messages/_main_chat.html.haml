@@ -1,33 +1,33 @@
 .chat--main
   .chat--main__group--info
     .chat--main__group--info__name
-      グループ
+      = @group.name
     .chat--main__group--info__member
-      Member: john tanaka
-    = link_to edit_group_path(1), class: "chat--main__group--info__edit--btn" do
+      Member:
+      - @group.users.each do |member|
+        = member.name
+    = link_to edit_group_path(@group.id), class: "chat--main__group--info__edit--btn" do
       Edit 
  
   .chat--main__message--list
-    .chat--main__message--list__top
-      .user--name
-        tanaka
-      .time--stamp
-        2019/12/09(Sun) 21:48:00
-    .chat--main__message--list__message
-      hello
+    - @messages.each do |message|
+      .chat--main__message--list__content
+        .chat--main__message--list__content__top
+          .user--name
+            = message.user.name
+          .time--stamp
+            = message.created_at.strftime("%Y/%m/%d %H:%M")
+        %p.chat--main__message--list__content__lower
+          - if message.body.present?
+            = message.body
+        = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
 
-    .chat--main__message--list__top
-      .user--name
-        john
-      .time--stamp
-        2019/12/10(Mon) 21:50:00
-    .chat--main__message--list__message
-      hi
-
-  .chat--main__message--form
-    .chat--main__message--form__bottom--items
-      %input.input__form--text{placeholder: 'type a message', type: 'text'}/
-      %label{class: 'append__icon'}
-        = icon('far', 'image')
-        %input.input__form--file{type: 'file'}/
-    %input.send__btn{type: 'submit', value: 'Send'}/
+  = form_for [@group, @message] do |f|
+    .chat--main__message--form 
+      .chat--main__message--form__bottom--items
+        = f.text_field :body, class: 'input__form--text', placeholder: 'type a message'
+        = f.label :image, class: 'append__icon' do
+          = icon('far', 'image')
+          = f.file_field :image, class: 'input__form--file'
+      .chat--main__message--form__bottom--btn
+        = f.submit 'Send', class: 'send__btn'
