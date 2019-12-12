@@ -6,11 +6,15 @@
       .top--items__icon
         = link_to edit_user_path(current_user.id) do
           = icon('fas', 'cog', class: 'cog')
-        = link_to "#" do
+        = link_to new_group_path do
           = icon('fas', 'edit', class: 'edit')
-  
+
   .side--bar__group--list
-    .side--bar__group--list__name
-      グループ
-    .side--bar__group--list__message
-      message
+    -# - if @groups.present?
+    - current_user.groups.each do |group|
+      .side--bar__group--list__name
+        = link_to group_messages_path(group) do
+          = group.name
+      .side--bar__group--list__message
+        = link_to group_messages_path(group) do
+          = group.id
