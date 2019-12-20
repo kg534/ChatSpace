@@ -85,6 +85,13 @@ li {
   line-height: 50px;
   font-size: 14px;
   border-bottom: 1px solid #ddd;
+  &__current--name{
+    font-size: 14px;
+    padding: 0 15px;
+    width: 100%;
+    line-height: 50px;
+    border-bottom: 1px solid #ddd;
+  }
   &:after {
     content: "";
     clear: both;
@@ -105,3 +112,4 @@ li {
     }
   }
 }
+
