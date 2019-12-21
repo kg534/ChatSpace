@@ -11,7 +11,7 @@
  
   .chat--main__message--list
     - @messages.each do |message|
-      .chat--main__message--list__content
+      %div.chat--main__message--list__content{data: {message: {id: message.id}}}
         .chat--main__message--list__content__top
           .user--name
             = message.user.name
