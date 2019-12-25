@@ -76,6 +76,7 @@ gem 'pry-rails'
 
 # Image Uploader
 gem 'carrierwave'
+gem 'fog-aws'
 
 gem 'mini_magick'
 
